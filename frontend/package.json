@@ -1,0 +1,62 @@
+{
+  "name": "aws-translate-frontend",
+  "version": "2.0.0",
+  "description": "React frontend for AWS Translate application with fixed dependencies",
+  "private": true,
+  "dependencies": {
+    "@aws-amplify/core": "^6.12.1",
+    "@aws-amplify/ui-react": "^6.11.2",
+    "aws-amplify": "^6.15.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "start": "GENERATE_SOURCEMAP=false react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "clean": "rm -rf node_modules package-lock.json && npm install",
+    "clean-build": "npm run clean && npm run build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "aws",
+    "translate",
+    "react",
+    "amplify",
+    "serverless"
+  ],
+  "author": "AWS Translate App",
+  "license": "MIT",
+  "overrides": {
+    "react-scripts": {
+      "@typescript-eslint/eslint-plugin": "^5.0.0",
+      "@typescript-eslint/parser": "^5.0.0"
+    }
+  },
+  "resolutions": {
+    "@aws-amplify/core": "^6.3.8"
+  }
+}

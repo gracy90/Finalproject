@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0073bb" />
+    <meta name="description" content="AWS Translate Application - Translate text between multiple languages" />
+
+    <!-- Simple polyfills for browser compatibility -->
+    <script>
+        // Simple process polyfill for React
+        if (typeof global === 'undefined') {
+            var global = globalThis || window || self;
+        }
+        if (typeof process === 'undefined') {
+            window.process = { env: { NODE_ENV: 'production' } };
+        }
+    </script>
+
+    <title>AWS Translate Application</title>
+</head>
+
+<body>
+    <noscript>
+        <div
+            style="text-align: center; padding: 2rem; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;">
+            <h2>JavaScript Required</h2>
+            <p>You need to enable JavaScript to run this application.</p>
+        </div>
+    </noscript>
+
+    <!-- Loading indicator -->
+    <div id="loading-indicator" style="
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 9999;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    ">
+        <div style="
+            width: 32px;
+            height: 32px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #0073bb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        "></div>
+        <p style="color: #666;">Loading AWS Translate Application...</p>
+    </div>
+
+    <!-- React app will mount here -->
+    <div id="root"></div>
+
+    <!-- Hide loading indicator when React loads -->
+    <script>
+        // Hide loading indicator when React loads
+        function hideLoadingIndicator() {
+            const loadingIndicator = document.getElementById('loading-indicator');
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+        }
+
+        // Check for React app mounting
+        function checkForReactApp() {
+            const root = document.getElementById('root');
+            if (root && root.hasChildNodes()) {
+                hideLoadingIndicator();
+                return true;
+            }
+            return false;
+        }
+
+        // Wait for React to load
+        setTimeout(function () {
+            if (!checkForReactApp()) {
+                setTimeout(function () {
+                    if (!checkForReactApp()) {
+                        hideLoadingIndicator();
+                        // Show simple fallback if React doesn't load
+                        document.getElementById('root').innerHTML = `
+                            <div style="text-align: center; padding: 2rem; font-family: sans-serif;">
+                                <h1 style="color: #0073bb;">🌐 AWS Translate</h1>
+                                <p>Application is loading... Please refresh if it doesn't load.</p>
+                                <button onclick="window.location.reload()" style="
+                                    background: #0073bb; 
+                                    color: white; 
+                                    border: none; 
+                                    padding: 1rem 2rem; 
+                                    border-radius: 4px; 
+                                    cursor: pointer;
+                                    margin-top: 1rem;
+                                ">
+                                    Refresh Page
+                                </button>
+                            </div>
+                        `;
+                    }
+                }, 3000);
+            }
+        }, 1000);
+
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
