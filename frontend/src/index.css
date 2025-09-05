@@ -4,7 +4,7 @@
 /* ===== CSS VARIABLES FOR BEAUTIFUL THEMING ===== */
 :root {
     /* Modern Color Palette */
-    --primary-gradient: linear-gradient(135deg, #37416b 0%, #764ba2 100%);
+    --primary-gradient: linear-gradient(135deg, #7faf40 0%, #8db882 100%);
     --primary-color: #4cad78;
     --primary-dark: #6ecaae;
     --primary-light: #e8ebff;
