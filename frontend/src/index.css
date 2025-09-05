@@ -1,12 +1,12 @@
-/* frontend/src/index.css */
+/* frontend/src/index.css
 /* FIXED: Modern, professional styling with proper layout and responsive design */
 
 /* ===== CSS VARIABLES FOR BEAUTIFUL THEMING ===== */
 :root {
     /* Modern Color Palette */
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --primary-color: #667eea;
-    --primary-dark: #5a6fd8;
+    --primary-gradient: linear-gradient(135deg, #37416b 0%, #764ba2 100%);
+    --primary-color: #4cad78;
+    --primary-dark: #6ecaae;
     --primary-light: #e8ebff;
     --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --secondary-color: #f093fb;
@@ -1274,4 +1274,4 @@ input:focus {
     max-width: 500px;
     width: 100%;
     margin: var(--spacing-lg);
-}
+} 
